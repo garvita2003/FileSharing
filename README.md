@@ -13,3 +13,11 @@ This File sharing website is MERN stack project that helps you to upload any kin
 2) NodeJs - Backend
 3) ExpressJs - Backend
 4) MongoDB - Database
+
+# Overview:
+![Screenshot 2023-09-09 000533](https://github.com/garvita2003/FileSharing/assets/102051676/b59a6296-4d3f-4eae-bd70-73cef481fcb8)
+![Screenshot 2023-09-09 000606](https://github.com/garvita2003/FileSharing/assets/102051676/286bdcac-7ad2-4973-af79-924ff9b98287)
+![Screenshot 2023-09-09 001244](https://github.com/garvita2003/FileSharing/assets/102051676/3c7bd295-cc94-4687-91bb-e3eb583efa15)
+![Screenshot 2023-09-09 001206](https://github.com/garvita2003/FileSharing/assets/102051676/f1be3bf0-5fb6-4554-975c-aa944a2e8766)
+
+
