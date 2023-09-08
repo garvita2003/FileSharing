@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+
+}
+
+img{
+  width: 40%;
+  height:100%;
+}
+
+.wrapper{
+  background-color: white;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 600;
+  color: teal;
+  margin: 40px 0;
+}
+
+button{
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: teal;
+  border: 1px solid teal;
+  color: white;
+  font-size: 20px;
+  margin: 30px 0;
+}
