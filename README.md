@@ -69,9 +69,6 @@
 
 ## 📸 Demonstration
 
-**Upload Interface:**
-![Screenshot 2023-09-09 000533](https://github.com/garvita2003/FileSharing/assets/102051676/b59a6296-4d3f-4eae-bd70-73cef481fcb8)
-
 **File Upload in Progress:**
 ![Screenshot 2023-09-09 000606](https://github.com/garvita2003/FileSharing/assets/102051676/286bdcac-7ad2-4973-af79-924ff9b98287)
 
