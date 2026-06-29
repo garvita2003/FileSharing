@@ -2,7 +2,7 @@
 
 ## 📌 Introduction
 
-**FileSharing** is a full-stack MERN (MongoDB, Express, React, Node.js) application that enables users to upload files and generate shareable links for easy file distribution. Upload any file type instantly, get a unique shareable link, and seamlessly share files with anyone without authentication complications.
+**FileSharing** is a full-stack MERN application that enables users to upload files and generate shareable links for easy file distribution. The application combines Express backend with React frontend in a single repository, allowing users to upload files instantly and get unique shareable links.
 
 **Key Features:**
 - ✅ Universal file upload supporting any file type
@@ -19,11 +19,11 @@
 **Key Steps:**
 1. User selects and uploads file via React UI
 2. Express backend receives file using Multer middleware
-3. File saved to `uploads/` folder on server
-4. File metadata (path, name, download count) stored in MongoDB
+3. File saved to `uploads/` folder
+4. File metadata (path, name, downloadContent count) stored in MongoDB
 5. Unique download link generated: `http://localhost:8000/file/{fileId}`
-6. Link displayed to user for immediate sharing
-7. When link is accessed, file is downloaded and counter incremented
+6. Link displayed to user for sharing
+7. When link is accessed, file is downloaded and download counter incremented
 8. Users can track how many times their file has been downloaded
 
 ---
@@ -35,8 +35,13 @@
 | **Frontend** | React.js, HTML, CSS, Axios |
 | **Backend** | Node.js, Express.js |
 | **Database** | MongoDB, Mongoose |
-| **File Handling** | Multer middleware |
+| **File Handling** | Multer |
 | **Communication** | CORS, RESTful API |
+
+**Language Composition:**
+- JavaScript: 68.6%
+- HTML: 20.4%
+- CSS: 11%
 
 ---
 
@@ -52,7 +57,7 @@
 **Backend Development:**
 - ✅ Express server setup and configuration
 - ✅ RESTful API design (POST/GET endpoints)
-- ✅ Middleware integration (CORS, Multer, body-parser)
+- ✅ Middleware integration (CORS, Multer)
 - ✅ File handling, validation, and storage
 - ✅ Error handling and response management
 
@@ -61,14 +66,11 @@
 - ✅ Mongoose schema design and models
 - ✅ CRUD operations implementation
 - ✅ Data persistence and querying
-- ✅ Indexing and data optimization
 
 **Full-Stack Skills:**
 - ✅ Frontend-backend integration and communication
 - ✅ Async/await programming patterns
 - ✅ Error handling and validation strategies
-- ✅ MVC architecture implementation
-- ✅ Environment configuration and deployment
 
 ---
 
@@ -76,29 +78,28 @@
 
 ```
 FileSharing/
-├── backend/
-│   ├── index.js              # Express server entry point
-│   ├── database/
-│   │   └── db.js             # MongoDB connection
-│   ├── models/
-│   │   └── File.js           # Mongoose file schema
-│   ├── routes/
-│   │   └── fileRoutes.js      # API routes for upload/download
-│   ├── uploads/              # Uploaded files storage
-│   ├── package.json          # Backend dependencies
-│   └── .env                  # Environment variables
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── App.js            # Main React component
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── styles/
-│   ├── package.json          # Frontend dependencies
-│   └── .env                  # Frontend configuration
-│
-└── README.md                 # Documentation
+├── controller/              # Request handlers
+│   └── image-controller.js  # Upload and download controllers
+├── database/                # Database configuration
+│   └── db.js                # MongoDB connection setup
+├── models/                  # Database schemas
+│   └── file.js              # File schema definition
+├── routes/                  # API route definitions
+│   └── routes.js            # Route configurations
+├── utils/                   # Utility functions
+│   └── upload.js            # Multer configuration
+├── uploads/                 # Uploaded files storage
+├── public/                  # React public assets
+│   └── index.html
+├── src/                     # React source code
+│   ├── App.js               # Main React component
+│   ├── App.css              # Application styling
+│   ├── index.js             # React entry point
+│   ├── index.css            # Global styles
+│   └── services/
+│       └── api.js           # API client for backend communication
+├── index.js                 # Express server entry point
+└── README.md                # Documentation
 ```
 
 ---
@@ -117,49 +118,42 @@ FileSharing/
 
 ### Prerequisites:
 - Node.js and npm installed on your system
-- MongoDB account (MongoDB Atlas recommended for cloud database)
-- Code editor (VSCode recommended)
+- MongoDB connection string (MongoDB Atlas or local MongoDB)
 
-### Backend Setup:
-
-```bash
-# 1. Navigate to backend directory
-cd backend
-
-# 2. Initialize and install dependencies
-npm init -y
-npm install express cors mongoose multer dotenv
-
-# 3. Create .env file with MongoDB connection string
-# DATABASE_URL=your_mongodb_connection_string
-# PORT=8000
-
-# 4. Update database/db.js with your MongoDB connection string
-
-# 5. Start the backend server
-node index.js
-# Server runs on http://localhost:8000
-```
-
-### Frontend Setup:
+### Installation Steps:
 
 ```bash
-# 1. Navigate to frontend directory
-cd frontend
+# 1. Clone the repository
+git clone https://github.com/garvita2003/FileSharing.git
+cd FileSharing
 
-# 2. Create React app (if not already created)
-npx create-react-app .
+# 2. Install dependencies
+npm install
 
-# 3. Install required dependencies
-npm install axios react-router-dom
+# 3. Create .env file at root level with MongoDB connection string
+# Add the following:
+# MONGODB_URI=your_mongodb_connection_string
 
-# 4. Create .env file for API configuration
-# REACT_APP_API_URL=http://localhost:8000
-
-# 5. Start the development server
+# 4. Start the server
+# This will start both Express backend (port 8000) and React frontend (port 3000)
 npm start
-# Application runs on http://localhost:3000
 ```
+
+### Running Frontend and Backend:
+
+The application runs in full-stack mode:
+
+**Backend (Express Server):**
+- Runs on `http://localhost:8000`
+- Handles file uploads and downloads
+- Manages MongoDB operations
+- Serves RESTful API endpoints
+
+**Frontend (React Application):**
+- Runs on `http://localhost:3000`
+- File upload UI
+- Link display and download tracking
+- Communicates with backend via Axios
 
 ### API Endpoints:
 
@@ -167,4 +161,28 @@ npm start
 |--------|----------|-------------|
 | POST | `/upload` | Upload file and generate shareable link |
 | GET | `/file/:fileId` | Download file by unique ID |
-| GET | `/file/:fileId/info` | Get file information and download count |
+
+---
+
+## 📝 Environment Configuration
+
+Create a `.env` file in the root directory:
+
+```
+MONGODB_URI=your_mongodb_atlas_connection_string
+PORT=8000
+```
+
+Replace `your_mongodb_atlas_connection_string` with your actual MongoDB connection string from MongoDB Atlas.
+
+---
+
+## 🚀 Usage
+
+1. Navigate to `http://localhost:3000` in your browser
+2. Click "Upload File" button
+3. Select a file from your system
+4. The file will be uploaded and a shareable link will be generated
+5. Copy the link and share it with others
+6. Others can download the file using the shared link
+7. Download count is tracked automatically
