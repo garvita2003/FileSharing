@@ -127,8 +127,8 @@ npm install
 
 # 3. Create .env file at root level with MongoDB connection string
 # Add the following:
-# MONGODB_URI=your_mongodb_connection_string
-Replace `your_mongodb_atlas_connection_string` with your actual MongoDB connection string from MongoDB Atlas.
+MONGODB_URI=your_mongodb_connection_string
+# Replace `your_mongodb_atlas_connection_string` with your actual MongoDB connection string from MongoDB Atlas.
 
 # 4. Start the server
 # This will start both Express backend (port 8000) and React frontend (port 3000)
