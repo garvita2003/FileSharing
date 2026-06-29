@@ -16,13 +16,6 @@
 
 ## 🔄 Process / Flow
 
-```
-User Upload → Multer Processes File → Saved to Server → 
-MongoDB Stores Metadata → Unique Link Generated → 
-Shareable Link Displayed → Recipient Downloads → 
-Download Count Updated
-```
-
 **Key Steps:**
 1. User selects and uploads file via React UI
 2. Express backend receives file using Multer middleware
@@ -85,9 +78,6 @@ Download Count Updated
 **Shareable Link Generated:**
 ![Screenshot 2023-09-09 001244](https://github.com/garvita2003/FileSharing/assets/102051676/3c7bd295-cc94-4687-91bb-e3eb583efa15)
 
-**Download Success:**
-![Screenshot 2023-09-09 001206](https://github.com/garvita2003/FileSharing/assets/102051676/f1be3bf0-5fb6-4554-975c-aa944a2e8766)
-
 ---
 
 ## ⚙️ Setup Instructions
@@ -127,7 +117,3 @@ npm start
 |--------|----------|-------------|
 | POST | `/upload` | Upload file |
 | GET | `/file/:fileId` | Download file by ID |
-
----
-
-**Created:** September 8, 2023
