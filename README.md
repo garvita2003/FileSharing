@@ -168,13 +168,3 @@ npm start
 | POST | `/upload` | Upload file and generate shareable link |
 | GET | `/file/:fileId` | Download file by unique ID |
 | GET | `/file/:fileId/info` | Get file information and download count |
-
-### Usage:
-
-1. Start both backend and frontend servers
-2. Navigate to http://localhost:3000 in your browser
-3. Click on file input to select a file
-4. Click "Upload" button
-5. Copy the generated shareable link
-6. Share the link with anyone
-7. Recipients can download the file by clicking the link
