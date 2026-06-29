@@ -38,11 +38,6 @@
 | **File Handling** | Multer |
 | **Communication** | CORS, RESTful API |
 
-**Language Composition:**
-- JavaScript: 68.6%
-- HTML: 20.4%
-- CSS: 11%
-
 ---
 
 ## 🎓 Skills Gained
@@ -133,27 +128,12 @@ npm install
 # 3. Create .env file at root level with MongoDB connection string
 # Add the following:
 # MONGODB_URI=your_mongodb_connection_string
+Replace `your_mongodb_atlas_connection_string` with your actual MongoDB connection string from MongoDB Atlas.
 
 # 4. Start the server
 # This will start both Express backend (port 8000) and React frontend (port 3000)
 npm start
 ```
-
-### Running Frontend and Backend:
-
-The application runs in full-stack mode:
-
-**Backend (Express Server):**
-- Runs on `http://localhost:8000`
-- Handles file uploads and downloads
-- Manages MongoDB operations
-- Serves RESTful API endpoints
-
-**Frontend (React Application):**
-- Runs on `http://localhost:3000`
-- File upload UI
-- Link display and download tracking
-- Communicates with backend via Axios
 
 ### API Endpoints:
 
@@ -162,27 +142,4 @@ The application runs in full-stack mode:
 | POST | `/upload` | Upload file and generate shareable link |
 | GET | `/file/:fileId` | Download file by unique ID |
 
----
 
-## 📝 Environment Configuration
-
-Create a `.env` file in the root directory:
-
-```
-MONGODB_URI=your_mongodb_atlas_connection_string
-PORT=8000
-```
-
-Replace `your_mongodb_atlas_connection_string` with your actual MongoDB connection string from MongoDB Atlas.
-
----
-
-## 🚀 Usage
-
-1. Navigate to `http://localhost:3000` in your browser
-2. Click "Upload File" button
-3. Select a file from your system
-4. The file will be uploaded and a shareable link will be generated
-5. Copy the link and share it with others
-6. Others can download the file using the shared link
-7. Download count is tracked automatically
